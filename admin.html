@@ -156,6 +156,14 @@
                             <span class="material-symbols-outlined">menu_book</span>
                             Gerenciar Artigos
                         </button>
+                        <button id="tab-btn-testimonials" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent">
+                            <span class="material-symbols-outlined">person_pin</span>
+                            Depoimentos
+                        </button>
+                        <button id="tab-btn-testimonials" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent">
+                            <span class="material-symbols-outiled">person_pin</span>
+                            Depoimentos
+                        </button>
                     </div>
                 </div>
 
@@ -241,7 +249,7 @@
                             <p class="text-xs text-slate-500 mt-1">Publique, edite e gerencie o agendamento de artigos técnicos do site.</p>
                         </div>
                         <button id="add-article-btn" 
-                            class="bg-primary text-white font-bold uppercase tracking-widest text-xs px-5 py-3 hover:bg-slate-800 transition-all flex items-center gap-2">
+                                class="bg-primary text-white font-bold uppercase tracking-widest text-xs px-5 py-3 hover:bg-slate-800 transition-all flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm">add</span>
                             Adicionar Artigo
                         </button>
@@ -260,6 +268,38 @@
                                 </tr>
                             </thead>
                             <tbody id="admin-article-list" class="divide-y divide-slate-100 text-xs">
+                                <!-- Carregados dinamicamente via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TAB 4: GERENCIAR DEPOIMENTOS -->
+                <div id="tab-content-testimonials" class="hidden bg-white border border-slate-200 p-8 space-y-8 shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                        <div>
+                            <h2 class="text-2xl font-headline font-bold text-primary uppercase">Gerenciamento de Depoimentos</h2>
+                            <p class="text-xs text-slate-500 mt-1">Gerencie os depoimentos dos clientes exibidos no site.</p>
+                        </div>
+                        <button id="add-testimonial-btn" 
+                                class="bg-primary text-white font-bold uppercase tracking-widest text-xs px-5 py-3 hover:bg-slate-800 transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">add</span>
+                            Adicionar Depoimento
+                        </button>
+                    </div>
+
+                    <!-- Testimonials Table -->
+                    <div class="overflow-x-auto border border-slate-200">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-[10px] font-bold uppercase tracking-wider text-primary">
+                                    <th class="p-4">Nome</th>
+                                    <th class="p-4">Empresa</th>
+                                    <th class="p-4">Depoimento</th>
+                                    <th class="p-4 text-right">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-testimonial-list" class="divide-y divide-slate-100 text-xs">
                                 <!-- Carregados dinamicamente via JS -->
                             </tbody>
                         </table>
@@ -536,6 +576,110 @@
         </div>
     </div>
 
+    <!-- 5. ADD/EDIT TESTIMONIAL MODAL -->
+    <div id="testimonial-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white w-full max-w-2xl border-t-8 border-secondary p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 id="testimonial-modal-title" class="text-xl font-headline font-bold text-primary uppercase">Adicionar Depoimento</h3>
+                <button id="close-testimonial-modal-btn" class="text-slate-400 hover:text-primary">
+                    <span class="material-symbols-outlined text-2xl">close</span>
+                </button>
+            </div>
+
+            <form id="testimonial-form" class="space-y-5">
+                <input type="hidden" id="form-testimonial-id" />
+                
+                <div class="space-y-1">
+                    <label for="form-testimonial-name" class="text-[10px] font-bold uppercase tracking-widest text-primary">Nome do Cliente</label>
+                    <input id="form-testimonial-name" type="text" required
+                        class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-2.5 px-3 text-sm"
+                        placeholder="Ex: João Silva" />
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="form-testimonial-company" class="text-[10px] font-bold uppercase tracking-widest text-primary">Empresa</label>
+                    <input id="form-testimonial-company" type="text" required
+                        class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-2.5 px-3 text-sm"
+                        placeholder="Ex: Indústrias Metalúrgicas São Paulo" />
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="form-testimonial-testimonial" class="text-[10px] font-bold uppercase tracking-widest text-primary">Depoimento</label>
+                    <textarea id="form-testimonial-testimonial" rows="4" required
+                        class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-2.5 px-3 text-sm resize-none"
+                        placeholder="Depoimento do cliente sobre os serviços da Recompara..."></textarea>
+                </div>
+
+                <!-- Image Picker Strategy -->
+                <div class="border border-slate-200 p-5 space-y-4">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-primary block">Imagem do Cliente</span>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Option 1: Choose from Server Preset Images -->
+                        <div class="space-y-1">
+                            <label for="form-testimonial-preset-img" class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Imagens Disponíveis no Servidor</label>
+                            <select id="form-testimonial-preset-img" 
+                                class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-2 px-3 text-xs">
+                                <option value="">-- Carregar do Upload ou URL --</option>
+                                <option value="Imagens/Compressor de Parafuso Bitzer.jpeg">Compressor Parafuso Bitzer</option>
+                                <option value="Imagens/Compressor novo.jpeg">Compressor Novo</option>
+                                <option value="Imagens/Compressores acabados.jpeg">Compressores Acabados</option>
+                                <option value="Imagens/Fabricação de Unidade Condensadora.jpeg">Fabricação Unidade Condensadora</option>
+                                <option value="Imagens/Peça Original Bitzer.jpeg">Peça Original Bitzer</option>
+                                <option value="Imagens/Produto Finalizado.jpeg">Produto Finalizado</option>
+                                <option value="Imagens/Produtos Acabados.jpeg">Produtos Acabados</option>
+                                <option value="Imagens/Qualidade dos Parceiros.jpeg">Qualidade dos Parceiros</option>
+                                <option value="Imagens/Sistema de Chiller Bitzer.jpeg">Sistema de Chiller Bitzer</option>
+                                <option value="Imagens/Sistema de Chiller Carrie.jpeg">Sistema de Chiller Carrie</option>
+                                <option value="Imagens/Sistema de Rack Congelado.jpeg">Sistema de Rack Congelado</option>
+                            </select>
+                        </div>
+
+                        <!-- Option 2: Enter Custom Image URL -->
+                        <div class="space-y-1">
+                            <label for="form-testimonial-url-img" class="text-[9px] font-bold uppercase tracking-wider text-slate-500">URL da Imagem Personalizada</label>
+                            <input id="form-testimonial-url-img" type="text"
+                                class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-2 px-3 text-xs"
+                                placeholder="http://exemplo.com/imagem.jpg" />
+                        </div>
+                    </div>
+
+                    <!-- Option 3: Local Upload Base64 -->
+                    <div class="space-y-1 border-t border-slate-100 pt-3">
+                        <label class="text-[9px] font-bold uppercase tracking-wider text-slate-500 block mb-1">Ou Fazer Upload do Computador</label>
+                        <div class="flex items-center gap-3">
+                            <input id="form-testimonial-file-img" type="file" accept="image/*"
+                                class="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer" />
+                        </div>
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div class="flex gap-4 items-center bg-slate-50 p-3">
+                        <div class="w-20 h-20 bg-slate-200 border border-slate-300 overflow-hidden flex items-center justify-center shrink-0">
+                            <img id="form-testimonial-img-preview" class="w-full h-full object-cover hidden" />
+                            <span id="form-testimonial-img-placeholder" class="material-symbols-outlined text-slate-400 text-3xl">image</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500">
+                            <p class="font-semibold uppercase text-slate-600">Visualização prévia da imagem.</p>
+                            <p class="mt-0.5">Selecione uma imagem acima por qualquer um dos métodos para carregar a prévia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-3 border-t border-slate-100">
+                    <button id="cancel-testimonial-form-btn" type="button" 
+                        class="px-5 py-3 border border-slate-200 text-slate-600 text-xs font-bold uppercase tracking-widest hover:bg-slate-50 transition-all">
+                        Cancelar
+                    </button>
+                    <button type="submit" 
+                        class="px-8 py-3 bg-secondary text-primary text-xs font-bold uppercase tracking-widest hover:brightness-105 active:scale-95 transition-all">
+                        Salvar Depoimento
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-[10px] font-medium uppercase tracking-widest text-slate-500 mt-auto">
         © 2026 Recompara Compressores. Administração Local via LocalStorage.
@@ -557,9 +701,11 @@
         const tabBtnTexts = document.getElementById('tab-btn-texts');
         const tabBtnProducts = document.getElementById('tab-btn-products');
         const tabBtnArticles = document.getElementById('tab-btn-articles');
+        const tabBtnTestimonials = document.getElementById('tab-btn-testimonials');
         const tabContentTexts = document.getElementById('tab-content-texts');
         const tabContentProducts = document.getElementById('tab-content-products');
         const tabContentArticles = document.getElementById('tab-content-articles');
+        const tabContentTestimonials = document.getElementById('tab-content-testimonials');
         const logoutBtn = document.getElementById('logout-btn');
 
         // ELEMENTOS DE TEXTO
@@ -764,31 +910,48 @@
         tabBtnTexts.addEventListener('click', () => { switchTab('texts'); });
         tabBtnProducts.addEventListener('click', () => { switchTab('products'); });
         tabBtnArticles.addEventListener('click', () => { switchTab('articles'); });
+        tabBtnTestimonials.addEventListener('click', () => { switchTab('testimonials'); });
 
         function switchTab(tab) {
             if (tab === 'texts') {
                 tabBtnTexts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all bg-primary text-white border-l-4 border-secondary";
                 tabBtnProducts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabBtnArticles.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabBtnTestimonials.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabContentTexts.classList.remove('hidden');
                 tabContentProducts.classList.add('hidden');
                 tabContentArticles.classList.add('hidden');
+                tabContentTestimonials.classList.add('hidden');
             } else if (tab === 'products') {
                 tabBtnProducts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all bg-primary text-white border-l-4 border-secondary";
                 tabBtnTexts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabBtnArticles.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabBtnTestimonials.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabContentProducts.classList.remove('hidden');
                 tabContentTexts.classList.add('hidden');
                 tabContentArticles.classList.add('hidden');
+                tabContentTestimonials.classList.add('hidden');
                 renderAdminProducts();
-            } else {
+            } else if (tab === 'articles') {
                 tabBtnArticles.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all bg-primary text-white border-l-4 border-secondary";
                 tabBtnTexts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabBtnProducts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabBtnTestimonials.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
                 tabContentArticles.classList.remove('hidden');
                 tabContentTexts.classList.add('hidden');
                 tabContentProducts.classList.add('hidden');
+                tabContentTestimonials.classList.add('hidden');
                 renderAdminArticles();
+            } else if (tab === 'testimonials') {
+                tabBtnTestimonials.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all bg-primary text-white border-l-4 border-secondary";
+                tabBtnTexts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabBtnProducts.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabBtnArticles.className = "w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all text-primary hover:bg-slate-100 hover:text-secondary border-l-4 border-transparent";
+                tabContentTestimonials.classList.remove('hidden');
+                tabContentTexts.classList.add('hidden');
+                tabContentProducts.classList.add('hidden');
+                tabContentArticles.classList.add('hidden');
+                renderAdminTestimonials();
             }
         }
 
@@ -800,6 +963,9 @@
             if (!localStorage.getItem('recompara_articles')) {
                 localStorage.setItem('recompara_articles', JSON.stringify(defaultArticles));
             }
+            if (!localStorage.getItem('recompara_testimonials')) {
+                localStorage.setItem('recompara_testimonials', JSON.stringify([])); // Empty array, will be populated by default data in testimonials.js
+            }
 
             inputSiteTitle.value = localStorage.getItem('recompara_siteTitle') || "Recompara Compressores | Excelência em Remanufatura";
             inputHeroTitle.value = localStorage.getItem('recompara_heroTitle') || `Qualidade Sempre em <span class="text-secondary">Primeiro Lugar!</span>`;
@@ -807,6 +973,7 @@
             
             renderAdminProducts();
             renderAdminArticles();
+            renderAdminTestimonials();
         }
 
         // --- SALVAR TEXTOS DO SITE ---
@@ -1258,6 +1425,218 @@
         };
         window.editArticle = function(id) { openArticleModal(id); };
 
+
+        // --- GERENCIAR DEPOIMENTOS (ADMIN) ---
+        function renderAdminTestimonials() {
+            adminTestimonialList.innerHTML = '';
+            const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+
+            if (testimonials.length === 0) {
+                adminTestimonialList.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="p-8 text-center text-slate-400 font-medium">Nenhum depoimento cadastrado.</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            testimonials.forEach((testimonial, index) => {
+                const row = document.createElement('tr');
+                row.className = "hover:bg-slate-50 transition-colors";
+                
+                // Truncate testimonial text for display
+                const shortTestimonial = testimonial.testimonial.length > 50 
+                    ? testimonial.testimonial.substring(0, 50) + "..." 
+                    : testimonial.testimonial;
+
+                row.innerHTML = `
+                    <td class="p-4">
+                        <div class="flex gap-3 items-center">
+                            <div class="w-10 h-10 bg-slate-200 overflow-hidden shrink-0 border border-slate-300">
+                                <img src="${testimonial.img || 'https://lh3.googleusercontent.com/aida-public/AB6AXuDWYOKBQ5mbGWUMzO_GV2sDfRyWogkw4DNoYfmY10ZTvHtIbKxjYgVZ0Epo3hPP1g6X6q8p8nihm78VFns8OMuXvYZRJGIoQKXflA9Zjxovk6xSrKbwXn0T4UjuDHA4huyF7r1HvLzkOGAMpa_mcjVT5HuoAg4IcwTdyokSeJgsBBUMDvLmmYdyYrq-yiyrbWXsq0j_01ehxUCEKgGCVNjzt-lAjLyXVShCQ4xR4XgQt-s0c4IwkJKlsXjwUUX1z8K_VaUIWSsZ_iZ8'}" 
+                                     class="w-full h-full object-cover" 
+                                     alt="${testimonial.name}">
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-sm text-primary truncate">${testimonial.name}</h4>
+                                <p class="text-xs text-slate-500 line-clamp-1">${testimonial.company}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-4">${testimonial.company}</td>
+                    <td class="p-4 text-sm line-clamp-2">${shortTestimonial}</td>
+                    <td class="p-4 text-right space-x-2">
+                        <button onclick="editTestimonial('${testimonial.id}')" 
+                                class="w-8 h-8 bg-white border border-slate-200 text-slate-500 hover:text-secondary hover:border-secondary transition-all flex items-center justify-center shadow-sm" 
+                                title="Editar">
+                            <span class="material-symbols-outlined text-base">edit</span>
+                        </button>
+                        <button onclick="deleteTestimonial('${testimonial.id}')" 
+                                class="w-8 h-8 bg-white border border-slate-200 text-slate-500 hover:text-error hover:border-error transition-all flex items-center justify-center shadow-sm" 
+                                title="Excluir">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                        </button>
+                    </td>
+                `;
+                adminTestimonialList.appendChild(row);
+            });
+        }
+
+        // Modais Depoimento
+        const testimonialModal = document.getElementById('testimonial-modal');
+        const closeTestimonialModalBtn = document.getElementById('close-testimonial-modal-btn');
+        const cancelTestimonialFormBtn = document.getElementById('cancel-testimonial-form-btn');
+        const testimonialForm = document.getElementById('testimonial-form');
+        const testimonialModalTitle = document.getElementById('testimonial-modal-title');
+
+        // Form Elements
+        const formTestimonialId = document.getElementById('form-testimonial-id');
+        const formTestimonialName = document.getElementById('form-testimonial-name');
+        const formTestimonialCompany = document.getElementById('form-testimonial-company');
+        const formTestimonialTestimonial = document.getElementById('form-testimonial-testimonial');
+        const formTestimonialImg = document.getElementById('form-testimonial-img');
+        const formTestimonialPresetImg = document.getElementById('form-testimonial-preset-img');
+        const formTestimonialUrlImg = document.getElementById('form-testimonial-url-img');
+        const formTestimonialFileImg = document.getElementById('form-testimonial-file-img');
+        const formTestimonialImgPreview = document.getElementById('form-testimonial-img-preview');
+        const formTestimonialImgPlaceholder = document.getElementById('form-testimonial-img-placeholder');
+        let currentTestimonialLoadedImg = "";
+
+        // Testimonial Image Preview
+        function updateTestimonialImgPreview(imgSrc) {
+            if (imgSrc) {
+                formTestimonialImgPreview.src = imgSrc;
+                formTestimonialImgPreview.classList.remove('hidden');
+                formTestimonialImgPlaceholder.classList.add('hidden');
+            } else {
+                formTestimonialImgPreview.src = "";
+                formTestimonialImgPreview.classList.add('hidden');
+                formTestimonialImgPlaceholder.classList.remove('hidden');
+            }
+        }
+
+        formTestimonialPresetImg.addEventListener('change', (e) => {
+            if (e.target.value) {
+                updateTestimonialImgPreview(e.target.value);
+                currentTestimonialLoadedImg = e.target.value;
+                formTestimonialUrlImg.value = '';
+                formTestimonialFileImg.value = '';
+            }
+        });
+
+        formTestimonialUrlImg.addEventListener('input', (e) => {
+            if (e.target.value) {
+                updateTestimonialImgPreview(e.target.value);
+                currentTestimonialLoadedImg = e.target.value;
+                formTestimonialPresetImg.value = '';
+                formTestimonialFileImg.value = '';
+            }
+        });
+
+        formTestimonialFileImg.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files[0]) {
+                const file = e.target.files[0];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        updateTestimonialImgPreview(event.target.result);
+                        currentTestimonialLoadedImg = event.target.result;
+                        formTestimonialPresetImg.value = '';
+                        formTestimonialUrlImg.value = '';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+
+        // Close Modal Functions
+        function closeTestimonialModal() {
+            testimonialModal.classList.add('hidden');
+            testimonialForm.reset();
+            updateTestimonialImgPreview("");
+            currentTestimonialLoadedImg = "";
+            formTestimonialId.value = "";
+            testimonialModalTitle.textContent = "Adicionar Depoimento";
+        }
+
+        closeTestimonialModalBtn.addEventListener('click', closeTestimonialModal);
+        cancelTestimonialFormBtn.addEventListener('click', closeTestimonialModal);
+
+        // Add/Edit Testimonial Form Submission
+        testimonialForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const id = formTestimonialId.value;
+            const name = formTestimonialName.value.trim();
+            const company = formTestimonialCompany.value.trim();
+            const testimonialText = formTestimonialTestimonial.value.trim();
+            const img = currentTestimonialLoadedImg || formTestimonialImg.value;
+
+            if (!name || !company || !testimonialText || !img) {
+                showToast("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+
+            if (id) {
+                // Edit existing testimonial
+                const index = testimonials.findIndex(t => t.id === id);
+                if (index !== -1) {
+                    testimonials[index] = { id, name, company, testimonial: testimonialText, img };
+                    showToast("Depoimento atualizado!");
+                }
+            } else {
+                // Add new testimonial
+                testimonials.push({ 
+                    id: "test_" + Date.now(), 
+                    name, 
+                    company, 
+                    testimonial: testimonialText, 
+                    img 
+                });
+                showToast("Depoimento criado com sucesso!");
+            }
+
+            localStorage.setItem('recompara_testimonials', JSON.stringify(testimonials));
+            renderAdminTestimonials();
+            closeTestimonialModal();
+        });
+
+        // Window functions for testimonial management
+        window.deleteTestimonial = function(id) {
+            if (confirm("Tem certeza que deseja excluir este depoimento?")) {
+                let testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+                testimonials = testimonials.filter(t => t.id !== id);
+                localStorage.setItem('recompara_testimonials', JSON.stringify(testimonials));
+                renderAdminTestimonials();
+                showToast("Depoimento excluído!");
+            }
+        };
+
+        window.editTestimonial = function(id) {
+            const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+            const testimonial = testimonials.find(t => t.id === id);
+            
+            if (testimonial) {
+                formTestimonialId.value = testimonial.id;
+                formTestimonialName.value = testimonial.name;
+                formTestimonialCompany.value = testimonial.company;
+                formTestimonialTestimonial.value = testimonial.testimonial;
+                
+                // Set image preview
+                if (testimonial.img.startsWith('Imagens/')) {
+                    formTestimonialPresetImg.value = testimonial.img;
+                } else if (testimonial.img.startsWith('http')) {
+                    formTestimonialUrlImg.value = testimonial.img;
+                }
+                updateTestimonialImgPreview(testimonial.img);
+                currentTestimonialLoadedImg = testimonial.img;
+                
+                testimonialModalTitle.textContent = "Editar Depoimento";
+                testimonialModal.classList.remove('hidden');
+            }
+        };
 
         // --- INICIALIZAÇÃO ---
         window.addEventListener('DOMContentLoaded', () => {

@@ -323,22 +323,27 @@
             </div>
         </div>
     </section>
-    <!-- Clients Section -->
-    <section class="py-20 bg-white border-y border-outline-variant/10">
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white border-y border-outline-variant/10" id="testimonials">
         <div class="max-w-screen-2xl mx-auto px-8">
-            <p class="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-outline mb-12">Confiança
-                Industrial de Grande Porte</p>
-            <div class="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale">
-                <img class="h-10" data-alt="abstract minimalist corporate logo 1"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgUOeHVjgBK_-eT7NfjIKuuJNAHQcf5hFJxSfsD80hyRkPjwRrOxiwkN-i8ZphI4_Pa-91Vax4hUh8-w4U2NijlWrTXcsm64rEsZvtSv10G_mcuN_pcZAsBI0DVkMEnTkHCePXni2wYBYNhdA2DurM2LZvXO0Hi3JkJyGDdFhZi3-ImCl4YN-qrfrHlNpIArSgaKsSFNS79vkWlBzNksCbEGSJ302O2i0zHcCWqiIKpasJ6Fb7nDmOkY9tlO7sU_ysT9rN6HpEjMK" />
-                <img class="h-10" data-alt="abstract minimalist corporate logo 2"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSzQNXmfITTRUT-Ss8l4lBuqF_QhO2X6j7XuteL7yxv-oNtLKnvirpujH6ONvjdyNNYw3M-TgVczthFHydlCNdH64zT8m9pKo6pg_OhFlLCgGHpLViqNihrho8dSAp78EGPZ8x7ScIJx9HQ2xYIa7iAT7kQhlB6kSG6QVp_BcfIhZ4efq0PjSmHu1O8566L3FWTUIM_U1W3y5zHPy-uPh6zpCIkqJegOlxpijHkNv50pZuua2IgCA9LEzVDkm-IwyiUh5rBTH-7JHl" />
-                <img class="h-10" data-alt="abstract minimalist corporate logo 3"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJAR7l75N24lD6plaURaJwOpVhPxRnpg9i4a2MNRZTcZXw6Hl5kdB0H9QoVr74TLG8dQeIXtUEMtI2prIF8rGXKkp58C29gMkHjVJqzqJj9JktjBAi_6f-KHrx1XWsNjXO5ybsM_pkDYEAZgME0QO9x5zRbrL66ROglEO9KJvnPFpr_eo9S4V5jOGzG3-CRzc1xl9wuww2SwmfUDk0RPazrKincPkTN07jSlmrKepymQfFQUI9pRnLpvSuEW20SUh6RUdnY7mWzQT" />
-                <img class="h-10" data-alt="abstract minimalist corporate logo 4"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6awyrivQ424WZB5Q5lhh8OXPrEBifg5VcL83WwSXVxqfBc11osu8aZqXmiRpqP-0IqWSLSWd12g8INuhpoeSUudoZwcon8znS5nOjnbNGXqAOdltNhknWeBjzGVQmms9TVkx8ZPilWBA-wq8pwAqBLfI9hlUaOkWNdjGsUO67Ldu5uNXf6Tazs-ZKC_S4WP1WB7bllGRHgDOLoFiTis2ScPPX2WKX6O9Rw2cZcmfyTiw4suVw_sUJyxI87R7VXIYknRzEG2x7QYy_" />
-                <img class="h-10" data-alt="abstract minimalist corporate logo 5"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzso1tnrns78pifLgaFluBb5h12cD3zo5mK9-3dUr2d0WcRNHrXUmSrIteJHVv_y52OiT5_1Xa0yWlIKqe8hP51Q28bW5lLdpG03t6IieI73nNkm-mxLYoff1tmRzz1Ib8lL5aWqxdMXl25qG3F1m8Fh8MkPulHKzw-QGvdXx96neiXP-HhO-xbNPH9IHDTW_zKWX5DXZ74DEOpqO5sfhCsBgaRUikrY-fhjrw7YWjJQ5cpsd2lnK6LpAeNgyXlsMYnxIkUeAkgHAM" />
+            <p class="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-outline mb-12">Depoimentos
+                de Clientes</p>
+            <!-- Testimonial Slider -->
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonials will be loaded dynamically via JavaScript -->
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 bg-primary/50 text-primary px-4 py-3 rounded-full hover:bg-primary/70 transition-colors z-10 flex items-center justify-center">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 bg-primary/50 text-primary px-4 py-3 rounded-full hover:bg-primary/70 transition-colors z-10 flex items-center justify-center">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+                <!-- Dots Navigation -->
+                <div id="testimonial-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10"></div>
             </div>
         </div>
     </section>
@@ -828,6 +833,183 @@ window.addEventListener('click', (e) => {
     if (e.target === prodModal) prodModal.classList.add('hidden');
     if (e.target === artModal) artModal.classList.add('hidden');
 });
+
+// Testimonial Slider Functionality
+let currentTestimonialIndex = 0;
+let testimonialAutoRotateInterval;
+
+// Initialize testimonials
+function initTestimonials() {
+    renderTestimonials();
+    startAutoRotate();
+    setupTestimonialNavigation();
+}
+
+// Render testimonials in the slider
+function renderTestimonials() {
+    const track = document.getElementById('testimonial-track');
+    const dotsContainer = document.getElementById('testimonial-dots');
+    
+    if (!track || !dotsContainer) return;
+    
+    const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+    
+    // Clear existing content
+    track.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    
+    testimonials.forEach((testimonial, index) => {
+        // Create testimonial slide
+        const slide = document.createElement('div');
+        slide.className = 'min-w-[calc(100%-4rem)] flex-shrink-0';
+        slide.innerHTML = `
+            <div class="bg-surface-container-low p-8 border border-slate-100 space-y-6">
+                <div class="flex items-start space-x-4">
+                    <img src="${testimonial.img || 'https://lh3.googleusercontent.com/aida-public/AB6AXuDWYOKBQ5mbGWUMzO_GV2sDfRyWogkw4DNoYfmY10ZTvHtIbKxjYgVZ0Epo3hPP1g6X6q8p8nihm78VFns8OMuXvYZRJGIoQKXflA9Zjxovk6xSrKbwXn0T4UjuDHA4huyF7r1HvLzkOGAMpa_mcjVT5HuoAg4IcwTdyokSeJgsBBUMDvLmmYdyYrq-yiyrbWXsq0j_01ehxUCEKgGCVNjzt-lAjLyXVShCQ4xR4XgQt-s0c4IwkJKlsXjwUUX1z8K_VaUIWSsZ_iZ8'}" 
+                         alt="${testimonial.name}" 
+                         class="w-16 h-16 rounded-full object-cover border-2 border-primary">
+                    <div class="space-y-2 flex-1">
+                        <h3 class="text-xl font-headline font-bold text-primary">${testimonial.name}</h3>
+                        <p class="text-on-surface-variant text-sm">${testimonial.company}</p>
+                    </div>
+                </div>
+                <p class="text-on-surface-variant leading-relaxed italic border-t border-outline-variant/20 pt-4">${testimonial.testimonial}</p>
+            </div>
+        `;
+        track.appendChild(slide);
+        
+        // Create dot indicator
+        const dot = document.createElement('button');
+        dot.className = `w-3 h-3 rounded-full bg-slate-300 ${index === 0 ? 'bg-primary' : ''} hover:bg-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50`;
+        dot.dataset.index = index;
+        dot.addEventListener('click', () => {
+            goToTestimonial(index);
+        });
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Set initial position
+    updateTestimonialPosition();
+}
+
+// Update testimonial slider position
+function updateTestimonialPosition() {
+    const track = document.getElementById('testimonial-track');
+    if (!track) return;
+    
+    const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+    if (testimonials.length === 0) return;
+    
+    // Calculate translateX percentage (each slide takes 100% minus gap)
+    const translateX = -currentTestimonialIndex * 100;
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update active dot
+    const dots = document.querySelectorAll('#testimonial-dots button');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-primary', index === currentTestimonialIndex);
+        dot.classList.toggle('bg-slate-300', index !== currentTestimonialIndex);
+    });
+}
+
+// Go to specific testimonial
+function goToTestimonial(index) {
+    const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+    if (testimonials.length === 0) return;
+    
+    currentTestimonialIndex = index;
+    updateTestimonialPosition();
+    resetAutoRotate();
+}
+
+// Next testimonial
+function nextTestimonial() {
+    const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+    if (testimonials.length === 0) return;
+    
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+    updateTestimonialPosition();
+    resetAutoRotate();
+}
+
+// Previous testimonial
+function prevTestimonial() {
+    const testimonials = JSON.parse(localStorage.getItem('recompara_testimonials') || '[]');
+    if (testimonials.length === 0) return;
+    
+    currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+    updateTestimonialPosition();
+    resetAutoRotate();
+}
+
+// Start auto rotation
+function startAutoRotate() {
+    testimonialAutoRotateInterval = setInterval(nextTestimonial, 5000); // Change every 5 seconds
+}
+
+// Reset auto rotation (when user interacts)
+function resetAutoRotate() {
+    clearInterval(testimonialAutoRotateInterval);
+    startAutoRotate();
+}
+
+// Setup navigation event listeners
+function setupTestimonialNavigation() {
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    
+    if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+    if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+    
+    // Pause on hover
+    const testimonialSection = document.getElementById('testimonials');
+    if (testimonialSection) {
+        testimonialSection.addEventListener('mouseenter', () => {
+            clearInterval(testimonialAutoRotateInterval);
+        });
+        testimonialSection.addEventListener('mouseleave', () => {
+            startAutoRotate();
+        });
+    }
+}
+
+// Initialize testimonials data if not exists
+function initTestimonialsData() {
+    if (!localStorage.getItem('recompara_testimonials')) {
+        const defaultTestimonials = [
+            {
+                id: "test-1",
+                name: "João Silva",
+                company: "Indústrias Metalúrgicas São Paulo",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDWYOKBQ5mbGWUMzO_GV2sDfRyWogkw4DNoYfmY10ZTvHtIbKxjYgVZ0Epo3hPP1g6X6q8p8nihm78VFns8OMuXvYZRJGIoQKXflA9Zjxovk6xSrKbwXn0T4UjuDHA4huyF7r1HvLzkOGAMpa_mcjVT5HuoAg4IcwTdyokSeJgsBBUMDvLmmYdyYrq-yiyrbWXsq0j_01ehxUCEKgGCVNjzt-lAjLyXVShCQ4xR4XgQt-s0c4IwkJKlsXjwUUX1z8K_VaUIWSsZ_iZ8",
+                testimonial: "A Recompara transformou completamente nossa linha de produção. Os compressores remanufaturados têmPerformance igual ao novo, mas com custo significativamente menor. Recomendamos fortemente seus serviços."
+            },
+            {
+                id: "test-2",
+                name: "Maria Oliveira",
+                company: "Refrigerantes Tropicais Ltda.",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8epYwKETG2_LJ5h86S0s0qsfa1wMlWz0YGQqmKTBcSJExH2aHaA3QOCyEfECzX0qUlVFubYyAahyqDs3Ah6VvcMlnZioK9eoDi7GCQ53dVGdljlaA3a3vo_9BgOh07fuUs0kT1zlYQqMfuuaBsK069e2RcwEY4ihNlywyaIM69UTo__GfRrH0kKYMbMZS5XwQ3FS5m9tyPocw2jedz5Ry287k3xYHxPGmCR-zzcCa6izW9_Y8hNYXtKqvQ75WmPsoEdcbZtUEGmSl",
+                testimonial: "Parceria excelente! A equipe técnica é altamente profissional e o atendimento pós-venda é excepcional. Nossos equipamentos nunca estiveram tão bem ajustados."
+            },
+            {
+                id: "test-3",
+                name: "Carlos Mendes",
+                company: "Logística Expressa Nacional",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBA_xqOR8qRZU6jQfVvIyKtZUWa4T74kcIGFlu2mSmXvTAceKMfoY6yIYbRpfGkhur2xNdDd-ZG0g-3c7jTyRlrlEHLYF-eJAu0YtyDnLh-PMHYJGe3ggI_AcFnW58-nVHGUByyBqc5g6XdJTrUyaOeuAcyuE7EOqNhkqx56N0WuWfCXd2G4Zt6PbWIRkSeaO3lSU4KR6nqZB8uMoqWHYO4maDpxPBeQ3no5aAvRTr37FeN-nnJqji_P3vWpv_vHTD2sF_G_xXNeXRD",
+                testimonial: "A sustentabilidade da remanufatura alinha-se perfeitamente com nossos valores corporativos. Além de reduzir custos, estamos contribuindo para um futuro mais verde."
+            }
+        ];
+        localStorage.setItem('recompara_testimonials', JSON.stringify(defaultTestimonials));
+    }
+}
+
+// Update initData function to include testimonials
+const originalInitData = window.initData;
+window.initData = function() {
+    originalInitData();
+    initTestimonialsData();
+    initTestimonials();
+};
 
 // Inicializar na carga da página
 window.addEventListener('DOMContentLoaded', initData);
