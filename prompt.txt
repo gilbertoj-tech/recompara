@@ -1,0 +1,63 @@
+**Atue como:** Web Designer & Estrategista de E-commerce especializado no mercado de vendas e prestação de serviços no setor de compressores de ar.
+
+**Projeto:** Criação de um website disruptivo para a marca **“Recompara”**. 
+
+**A Proposta de Valor Única (USP):** Remanufaturar é Transformar.
+
+**Diretrizes de Design e Estética (Referência em anexo):**
+
+**Visual:** Siga o estilo do design da imagem de referência enviada, utilizando uma paleta : 
+A paleta de cores oficial utilizada pela empresa é composta pelas seguintes tonalidades:
+Azul marinho: HEX #1D2B59
+Azul Turquesa/Ciano: HEX #00A8C5
+Preto: HEX #000000
+
+Produtos: Utilize as fotos das garrafas enviadas como base para gerar mockups 3D hiper-realistas. As imagens devem mostrar as garrafas com textura de condensação (gotas de gelo) e iluminação de estúdio profissional.
+
+Interatividade 2026: O site deve ser fluido, com efeitos de scroll suaves e micro-animações que remetam à efervescência da bebida.
+
+Estrutura de Conteúdo (Baseada no site original):
+Home Page de Alto Impacto: Hero section com o produto em 3D, copywriting focado no "Sabor Energético Original, 0% Estimulantes, 100% Vibe". Seção de prova social com a estética da Mansão Maromba.
+
+Página de Produto (O Catálogo): Replicar os produtos do site original, mas com descrições sensoriais que destaquem o diferencial de saúde e o sabor único.
+Seção "Por que o Goro?": Infográfico visual comparando o perigo de misturar energético real vs. a segurança da nossa fórmula.
+
+Checkout Otimizado: Processo de compra em poucas etapas, focado em conversão mobile rápida.
+
+Instrução Especial: Antes de iniciar o layout, pesquise as comunicações recentes do Toguro sobre o "Goro" para captar a gíria e o tom de voz atual da marca, garantindo que o site fale a língua da comunidade Mansão Maromba.
+
+Eu gostei da referência que enviei, quero algo no mesmo estilo, mas claro, com cores diferentes.
+
+
+
+
+Quero usar o MCP do Stitch e a habilidade de criação de prompts e também a de Loop, que a gente adicionou nesse projeto, para criar essas 4 páginas abaixo
+Utilize meu último projeto no stitch.
+Atue como: Web Designer e Estrategista de SEO Industrial sênior. Objetivo: Utilizar o fluxo de Loop para criar e refinar as 4 páginas fundamentais do site da Recompara Compressores, garantindo conformidade com a ficha SEBRAETEC.
+Paleta de Cores: Azul marinho (#1D2B59), Azul Turquesa (#00A8C5) e Preto (#000000).
+Logo da Recompara na pasta imagens
+1. Página: Nossa História — "Remanufaturar é Transformar"
+Conceito: Adaptar a página de "Missão". Em vez de redução de danos, o foco é a Sustentabilidade Industrial e a Excelência Técnica.
+Conteúdo: Explicar como a Recompara transforma compressores usados em novos desde 2018. Destacar o compromisso com práticas ecológicas que reduzem o impacto ambiental no processo de retificação.
+Elementos: Linha do tempo da empresa e blocos de texto sobre a "Missão de oferecer serviços com diferencial e excelência".
+2. Página: Autoridade Industrial — Nossos Clientes e Parceiros
+Conceito: Mostrar a presença da marca em grandes clientes industriais e parcerias estratégicas com fabricantes.
+Conteúdo: Reforçar a autoridade no segmento industrial e comercial. Exibir logotipos de clientes atendidos para gerar prova social e confiança técnica.
+Estilo: Galeria de fotos de serviços realizados e marcas parceiras.
+3. Página: Suporte Técnico e Contato / FAQ
+Conceito: Adaptar a página de "Suporte/FAQ". Focar em Atendimento Emergencial e Garantia.
+Conteúdo: Formulário para leads solicitarem orçamentos. Seção de dúvidas frequentes sobre a garantia de 12 meses, processos de retirada e entrega segura, e suporte pós-venda.
+Funcionalidade: Integração com botões de contato (WhatsApp/E-mail) para suporte rápido.
+4. Página: Vitrine de Produtos (Compressores)
+Conceito: Adaptar a página "Nossos Produtos".
+Conteúdo: Apresentar os 5 compressores principais (usando as fotos em anexo). Cada item deve ter uma descrição técnica que destaque o desempenho de "equipamento novo" após a remanufatura.
+Visual: Layout de vitrine (catálogo), mas sem venda direta (e-commerce), conforme o tipo de site institucional definido no pré-diagnóstico.
+
+
+Regras de Loop e SEO (SEBRAETEC):
+Interatividade: O site deve ter layout responsivo para dispositivos móveis.
+SEO On-Page: O Loop deve otimizar cada página para termos como "retificação de compressores", "remanufatura industrial" e "manutenção de compressores".
+Rodapé Obrigatório: Incluir dados da empresa e a frase "CRIADO POR: [Nome da Prestadora] com o apoio do Sebrae".
+
+
+Ação: Inicie o Loop de criação pela Página 1 (Nossa História) para validação do tom de voz técnico e sustentável da Recompara.

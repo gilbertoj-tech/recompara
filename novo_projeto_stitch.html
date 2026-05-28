@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recompara Compressores | Excelência em Remanufatura</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#001f26",
+                        "surface": "#f7f9fc",
+                        "outline-variant": "#c6c6d0",
+                        "primary-fixed-dim": "#b7c4fc",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#374474",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#adecff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eff1f4",
+                        "primary": "#051543",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004e5d",
+                        "primary-container": "#1d2b59",
+                        "surface-container-high": "#e6e8eb",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-container": "#8693c8",
+                        "secondary-container": "#62defd",
+                        "surface-variant": "#e0e3e6",
+                        "surface-bright": "#f7f9fc",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#959595",
+                        "tertiary": "#191919",
+                        "on-primary-fixed": "#071846",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-highest": "#e0e3e6",
+                        "surface-container": "#eceef1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f2f4f7",
+                        "background": "#f7f9fc",
+                        "inverse-surface": "#2d3133",
+                        "on-background": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#2e2e2e",
+                        "secondary-fixed-dim": "#58d6f4",
+                        "inverse-primary": "#b7c4fc",
+                        "outline": "#767680",
+                        "secondary": "#00687a",
+                        "on-secondary-container": "#006172",
+                        "on-surface-variant": "#45464f",
+                        "surface-tint": "#4f5c8d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .industrial-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #051543 0%, #1D2B59 100%);
+        }
+
+        .shadow-ambient {
+            box-shadow: 0 12px 40px -10px rgba(5, 21, 67, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 industrial-glass shadow-sm">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter text-primary uppercase font-headline">
+                Recompara Compressores
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-secondary border-b-2 border-secondary pb-1 text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#">Home</a>
+                <a class="text-primary hover:text-secondary text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#sobre">Sobre</a>
+                <a class="text-primary hover:text-secondary text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#vitrine">Vitrine</a>
+                <a class="text-primary hover:text-secondary text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#servicos">Serviços</a>
+                <a class="text-primary hover:text-secondary text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#artigos">Artigos</a>
+                <a class="text-primary hover:text-secondary text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
+                    href="#contato">Contato</a>
+            </div>
+            <button
+                class="bg-primary text-on-primary px-6 py-2.5 text-xs font-bold uppercase tracking-widest rounded-none border border-secondary/30 hover:bg-primary-container transition-all active:scale-95">
+                Solicitar Orçamento
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                data-alt="close-up of a massive industrial air compressor unit in a clean laboratory setting with dramatic blue and teal lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJswHHhnLUyvgef_KoMTeBhaF2I3cTgsuKg9aswjd_qbGjbNDUtXvzbktJjpPTg69DiR79TAUVed0H2vQkgEbpqpq3mlOaUrwv6Zna0WtpLkl9ezwf961SNhPEHQROCucP6DZBZ3vyZZlzynfV4mfJom-PZ65H9ZLfqGM2mKsHD58pqckS2sQTyDN_vlBIlPDzqYXBDgUBI_ZOEAzhyQmuhgDdPiLIGPKkBVKrIZwU1WWMer7HOYNEOgGaj3_XUkOYRvhaIeAfcuyN" />
+            <div class="absolute inset-0 hero-gradient opacity-80"></div>
+        </div>
+        <div class="relative z-10 max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div
+                    class="inline-flex items-center px-3 py-1 bg-secondary/20 border-l-4 border-secondary text-secondary-container text-xs font-bold uppercase tracking-[0.2em]">
+                    Tecnologia e Precisão
+                </div>
+                <h1 id="hero-title" class="text-6xl md:text-8xl font-headline font-bold text-white tracking-tighter leading-none">
+                    Qualidade Sempre em <span class="text-secondary">Primeiro Lugar!</span>
+                </h1>
+                <p id="hero-subtitle" class="text-xl text-primary-fixed-dim max-w-lg font-medium leading-relaxed">
+                    Remanufaturar é Transformar. Unimos engenharia avançada e sustentabilidade para dar nova vida ao seu
+                    maquinário industrial.
+                </p>
+                <div class="flex space-x-4 pt-4">
+                    <button
+                        class="bg-secondary text-on-secondary px-8 py-4 font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all">
+                        Ver Produtos
+                    </button>
+                    <button
+                        class="border border-white/20 text-white px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-all backdrop-blur-sm">
+                        Conheça Nossa Fábrica
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:block relative">
+                <div class="absolute -inset-10 bg-secondary/10 blur-3xl rounded-full"></div>
+                <div
+                    class="relative bg-surface-container-lowest/10 backdrop-blur-xl p-8 border border-white/10 rounded-lg shadow-2xl">
+                    <img class="w-full h-auto rounded shadow-ambient"
+                        data-alt="high-precision mechanical assembly parts and technical blueprints on an industrial workbench with focused lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRT5Cuusgr5c0jewEBUBsNvgL1gx3hSJfccz_pkaeEnDt8hnCOP8CWCORw5oYW25XzhO1pC16Mg7PV5f3VfMwiE9RGqjb90DFKgjarIqiHhHPRaOm0hnCOv43t7nBnHCAngxGjEX0FHvpNsddJnTAtxq9bEH-1QzrvdIKZVgp0pSTpZFbDCyTV_Tq0WpjzX1uKSoNBZd1T2H8M3orKTsRb9px7pM2NFeLaKVNJeI2fOx0lej0uthq77bka8R7Wxr0fCo9pnX371kHk" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Differentials -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+                <div
+                    class="p-12 bg-white border-r border-outline-variant/10 shadow-ambient group hover:bg-primary transition-all duration-500">
+                    <span
+                        class="material-symbols-outlined text-secondary text-5xl mb-6 group-hover:text-white transition-colors"
+                        data-icon="settings_suggest">settings_suggest</span>
+                    <h3 class="text-2xl font-headline font-bold mb-4 text-primary group-hover:text-white">Peças
+                        Originais</h3>
+                    <p class="text-on-surface-variant group-hover:text-primary-fixed-dim">Garantia absoluta de
+                        performance utilizando apenas componentes certificados pelos fabricantes.</p>
+                </div>
+                <div
+                    class="p-12 bg-surface-container-low border-r border-outline-variant/10 shadow-ambient group hover:bg-primary transition-all duration-500">
+                    <span
+                        class="material-symbols-outlined text-secondary text-5xl mb-6 group-hover:text-white transition-colors"
+                        data-icon="verified">verified</span>
+                    <h3 class="text-2xl font-headline font-bold mb-4 text-primary group-hover:text-white">12 Meses de
+                        Garantia</h3>
+                    <p class="text-on-surface-variant group-hover:text-primary-fixed-dim">Segurança total para sua
+                        operação com cobertura completa e suporte técnico especializado.</p>
+                </div>
+                <div class="p-12 bg-white shadow-ambient group hover:bg-primary transition-all duration-500">
+                    <span
+                        class="material-symbols-outlined text-secondary text-5xl mb-6 group-hover:text-white transition-colors"
+                        data-icon="support_agent">support_agent</span>
+                    <h3 class="text-2xl font-headline font-bold mb-4 text-primary group-hover:text-white">Atendimento
+                        Emergencial</h3>
+                    <p class="text-on-surface-variant group-hover:text-primary-fixed-dim">Sua produção não pode parar.
+                        Equipe pronta para agir com agilidade e precisão técnica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-32 bg-surface-container overflow-hidden" id="sobre">
+        <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="aspect-square bg-surface-dim rounded-none relative overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        data-alt="historical black and white photograph of an industrial workshop mixed with modern technicians working on a compressor"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWQOQcqg8Ld0EeMb-pE5mnpzy1bdELBQqzLYmqagsJAEANeXLkxZtLs4bWusVdtYi-bAbo_zMVU4nYoG5M_APqPMd_AwMX9teNb0XxrNhrd7wKNY71S3WoOJ7DTMhNI713oLABWjUHbc4JZKR1hhxz5mI_J-iXARraAorqmPOPF9D6m3qRvxXncY8i28Iu5z-32yohMopgDmXnBC0rJOM8MN057gD_bLWHx64OA1956Tqx6_wrq_CWg6LYpY_8SK8TsIIUgpG8pW0" />
+                </div>
+                <div class="absolute -bottom-10 -right-10 bg-secondary p-12 text-white">
+                    <p class="text-6xl font-headline font-bold leading-none">2018</p>
+                    <p class="text-xs uppercase tracking-widest font-bold mt-2">Fundação da Recompara</p>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary">Nossa História</h2>
+                <h3 class="text-5xl font-headline font-bold text-primary leading-tight">Expertise técnica com foco na
+                    <span class="italic font-normal">Sustentabilidade Industrial.</span></h3>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Desde nossa fundação em 2018, a Recompara Compressores nasceu com o propósito de redefinir o ciclo
+                    de vida dos equipamentos industriais. Localizados em Araraquara-SP, transformamos tecnologia em
+                    soluções sustentáveis.
+                </p>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Nossa abordagem combina o rigor da engenharia mecânica tradicional com as mais novas técnicas de
+                    recuperação de superfícies e rebobinamento, garantindo que cada compressor retorne à linha de
+                    produção com performance de fábrica.
+                </p>
+                <div class="pt-6 grid grid-cols-2 gap-8 border-t border-outline-variant/30">
+                    <div>
+                        <p class="text-3xl font-headline font-bold text-primary">500+</p>
+                        <p class="text-xs uppercase tracking-widest text-on-surface-variant">Projetos Entregues</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-headline font-bold text-primary">100%</p>
+                        <p class="text-xs uppercase tracking-widest text-on-surface-variant">Sustentável</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Showcase (Vitrine) -->
+    <section class="py-32 bg-white" id="vitrine">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-4">Vitrine de Produtos
+                    </h2>
+                    <h3 class="text-5xl font-headline font-bold text-primary">Engenharia de Precisão</h3>
+                </div>
+                <button class="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group">
+                    Ver Catálogo Completo
+                    <span
+                        class="material-symbols-outlined text-secondary group-hover:translate-x-2 transition-transform"
+                        data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Os produtos serão carregados dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-32 bg-surface-container-highest relative" id="servicos">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-4">Especialidades</h2>
+                <h3 class="text-5xl font-headline font-bold text-primary">Serviços de Alta Complexidade</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div
+                    class="bg-white p-8 border-t-4 border-secondary shadow-ambient space-y-4 hover:-translate-y-2 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        data-icon="rebase_edit">rebase_edit</span>
+                    <h4 class="font-headline font-bold text-lg text-primary">Remanufatura</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Processo completo de desmontagem, limpeza
+                        e remontagem com peças novas.</p>
+                </div>
+                <div
+                    class="bg-white p-8 border-t-4 border-secondary shadow-ambient space-y-4 hover:-translate-y-2 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        data-icon="architecture">architecture</span>
+                    <h4 class="font-headline font-bold text-lg text-primary">Recuperação</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Restauração de superfícies e dimensões
+                        originais de componentes críticos.</p>
+                </div>
+                <div
+                    class="bg-white p-8 border-t-4 border-secondary shadow-ambient space-y-4 hover:-translate-y-2 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+                    <h4 class="font-headline font-bold text-lg text-primary">Rebobinamento</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Enrolamento de motores elétricos com
+                        isolamento de alta temperatura.</p>
+                </div>
+                <div
+                    class="bg-white p-8 border-t-4 border-secondary shadow-ambient space-y-4 hover:-translate-y-2 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        data-icon="precision_manufacturing">precision_manufacturing</span>
+                    <h4 class="font-headline font-bold text-lg text-primary">Calibrações</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Ajustes finos de pressão e vazão conforme
+                        normas técnicas vigentes.</p>
+                </div>
+                <div
+                    class="bg-white p-8 border-t-4 border-secondary shadow-ambient space-y-4 hover:-translate-y-2 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl"
+                        data-icon="cleaning_services">cleaning_services</span>
+                    <h4 class="font-headline font-bold text-lg text-primary">Limpeza</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Inspeção por endoscopia e limpeza técnica
+                        de circuitos de óleo e ar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Clients Section -->
+    <section class="py-20 bg-white border-y border-outline-variant/10">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <p class="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-outline mb-12">Confiança
+                Industrial de Grande Porte</p>
+            <div class="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale">
+                <img class="h-10" data-alt="abstract minimalist corporate logo 1"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgUOeHVjgBK_-eT7NfjIKuuJNAHQcf5hFJxSfsD80hyRkPjwRrOxiwkN-i8ZphI4_Pa-91Vax4hUh8-w4U2NijlWrTXcsm64rEsZvtSv10G_mcuN_pcZAsBI0DVkMEnTkHCePXni2wYBYNhdA2DurM2LZvXO0Hi3JkJyGDdFhZi3-ImCl4YN-qrfrHlNpIArSgaKsSFNS79vkWlBzNksCbEGSJ302O2i0zHcCWqiIKpasJ6Fb7nDmOkY9tlO7sU_ysT9rN6HpEjMK" />
+                <img class="h-10" data-alt="abstract minimalist corporate logo 2"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSzQNXmfITTRUT-Ss8l4lBuqF_QhO2X6j7XuteL7yxv-oNtLKnvirpujH6ONvjdyNNYw3M-TgVczthFHydlCNdH64zT8m9pKo6pg_OhFlLCgGHpLViqNihrho8dSAp78EGPZ8x7ScIJx9HQ2xYIa7iAT7kQhlB6kSG6QVp_BcfIhZ4efq0PjSmHu1O8566L3FWTUIM_U1W3y5zHPy-uPh6zpCIkqJegOlxpijHkNv50pZuua2IgCA9LEzVDkm-IwyiUh5rBTH-7JHl" />
+                <img class="h-10" data-alt="abstract minimalist corporate logo 3"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJAR7l75N24lD6plaURaJwOpVhPxRnpg9i4a2MNRZTcZXw6Hl5kdB0H9QoVr74TLG8dQeIXtUEMtI2prIF8rGXKkp58C29gMkHjVJqzqJj9JktjBAi_6f-KHrx1XWsNjXO5ybsM_pkDYEAZgME0QO9x5zRbrL66ROglEO9KJvnPFpr_eo9S4V5jOGzG3-CRzc1xl9wuww2SwmfUDk0RPazrKincPkTN07jSlmrKepymQfFQUI9pRnLpvSuEW20SUh6RUdnY7mWzQT" />
+                <img class="h-10" data-alt="abstract minimalist corporate logo 4"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6awyrivQ424WZB5Q5lhh8OXPrEBifg5VcL83WwSXVxqfBc11osu8aZqXmiRpqP-0IqWSLSWd12g8INuhpoeSUudoZwcon8znS5nOjnbNGXqAOdltNhknWeBjzGVQmms9TVkx8ZPilWBA-wq8pwAqBLfI9hlUaOkWNdjGsUO67Ldu5uNXf6Tazs-ZKC_S4WP1WB7bllGRHgDOLoFiTis2ScPPX2WKX6O9Rw2cZcmfyTiw4suVw_sUJyxI87R7VXIYknRzEG2x7QYy_" />
+                <img class="h-10" data-alt="abstract minimalist corporate logo 5"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzso1tnrns78pifLgaFluBb5h12cD3zo5mK9-3dUr2d0WcRNHrXUmSrIteJHVv_y52OiT5_1Xa0yWlIKqe8hP51Q28bW5lLdpG03t6IieI73nNkm-mxLYoff1tmRzz1Ib8lL5aWqxdMXl25qG3F1m8Fh8MkPulHKzw-QGvdXx96neiXP-HhO-xbNPH9IHDTW_zKWX5DXZ74DEOpqO5sfhCsBgaRUikrY-fhjrw7YWjJQ5cpsd2lnK6LpAeNgyXlsMYnxIkUeAkgHAM" />
+            </div>
+        </div>
+    </section>
+    <!-- Technical Articles Section -->
+    <section class="py-32 bg-white" id="artigos">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-4">Artigos Técnicos</h2>
+                    <h3 class="text-5xl font-headline font-bold text-primary">Conhecimento & Engenharia</h3>
+                </div>
+            </div>
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Os artigos serão carregados dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-32 bg-primary text-white" id="contato">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+                <div class="space-y-12">
+                    <div>
+                        <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-4">Fale Conosco</h2>
+                        <h3 class="text-6xl font-headline font-bold tracking-tighter">Pronto para otimizar sua planta
+                            industrial?</h3>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-secondary/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary"
+                                    data-icon="location_on">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-primary-fixed-dim mb-1">Localização</p>
+                                <p class="text-lg font-medium">Av. Armando Biagioni, 357, Araraquara - SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-secondary/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary"
+                                    data-icon="phone_in_talk">phone_in_talk</span>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-primary-fixed-dim mb-1">Contato Direto
+                                </p>
+                                <p class="text-lg font-medium">16 3397-4800</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-secondary/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary" data-icon="mail">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-primary-fixed-dim mb-1">Email
+                                    Corporativo</p>
+                                <p class="text-lg font-medium">recompara@recompara.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-12 text-primary">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-widest">Nome Completo</label>
+                                <input
+                                    class="w-full border-b border-outline-variant/30 focus:border-secondary transition-colors py-2 outline-none text-sm px-0 bg-transparent"
+                                    type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-widest">E-mail</label>
+                                <input
+                                    class="w-full border-b border-outline-variant/30 focus:border-secondary transition-colors py-2 outline-none text-sm px-0 bg-transparent"
+                                    type="email" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest">Serviço ou Produto de
+                                Interesse</label>
+                            <select
+                                class="w-full border-b border-outline-variant/30 focus:border-secondary transition-colors py-2 outline-none text-sm px-0 bg-transparent">
+                                <option>Remanufatura de Compressores</option>
+                                <option>Recuperação de Superfícies</option>
+                                <option>Rebobinamento</option>
+                                <option>Compra de Equipamentos</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest">Mensagem</label>
+                            <textarea
+                                class="w-full border-b border-outline-variant/30 focus:border-secondary transition-colors py-2 outline-none text-sm px-0 bg-transparent resize-none"
+                                rows="4"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-primary text-white py-4 font-bold uppercase tracking-widest text-xs hover:bg-secondary transition-colors mt-4">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-screen-2xl mx-auto">
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-blue-900 uppercase font-headline">Recompara Compressores</div>
+                <p class="text-sm text-slate-600 font-body">Líder em remanufatura de compressores industriais,
+                    entregando performance e economia com sustentabilidade.</p>
+                <div class="flex gap-4">
+                    <a class="text-blue-900 hover:text-blue-700 transition-colors" href="#"><span
+                            class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span></a>
+                    <a class="text-blue-900 hover:text-blue-700 transition-colors" href="#"><span
+                            class="material-symbols-outlined" data-icon="instagram">retweet</span></a>
+                    <a class="text-blue-900 hover:text-blue-700 transition-colors" href="#"><span
+                            class="material-symbols-outlined" data-icon="linkedin">link</span></a>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-medium uppercase tracking-widest text-blue-900 font-label">Navegação</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-600 text-sm hover:text-blue-700 underline decoration-2 underline-offset-4 font-body"
+                            href="#">Home</a></li>
+                    <li><a class="text-slate-600 text-sm hover:text-blue-700 underline decoration-2 underline-offset-4 font-body"
+                            href="#sobre">Sobre</a></li>
+                    <li><a class="text-slate-600 text-sm hover:text-blue-700 underline decoration-2 underline-offset-4 font-body"
+                            href="#vitrine">Vitrine</a></li>
+                    <li><a class="text-slate-600 text-sm hover:text-blue-700 underline decoration-2 underline-offset-4 font-body"
+                            href="#servicos">Serviços</a></li>
+                    <li><a class="text-slate-600 text-sm hover:text-blue-700 underline decoration-2 underline-offset-4 font-body"
+                            href="#artigos">Artigos</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-medium uppercase tracking-widest text-blue-900 font-label">Contato</h4>
+                <ul class="space-y-4">
+                    <li class="text-slate-600 text-sm font-body">Av. Armando Biagioni, 357, Araraquara - SP</li>
+                    <li class="text-slate-600 text-sm font-body">16 3397-4800</li>
+                    <li class="text-slate-600 text-sm font-body">recompara@recompara.com.br</li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-medium uppercase tracking-widest text-blue-900 font-label">Institucional
+                </h4>
+                <p class="text-sm text-slate-600 font-body">Segunda a Sexta: 08:00 - 18:00</p>
+                <div class="pt-4">
+                    <span
+                        class="inline-block px-3 py-1 border border-blue-900/20 text-[10px] font-bold text-blue-900 uppercase tracking-widest">ISO
+                        9001 Certified</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-screen-2xl mx-auto px-8 py-8 border-t border-slate-200">
+            <p class="text-[10px] font-medium uppercase tracking-widest text-slate-600 text-center">
+                © 2024 Recompara Compressores. CRIADO POR: Jornada de Transformação Digital - SEBRAETEC <a href="./admin.html" class="opacity-20 cursor-default select-none">.</a>
+            </p>
+        </div>
+    </footer>
+
+<!-- Product Detail Modal -->
+<div id="product-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-8 rounded-none max-w-lg w-full relative border-t-4 border-secondary shadow-2xl">
+        <button id="close-product-detail" class="absolute top-4 right-4 text-primary hover:text-secondary text-2xl font-bold transition-colors">✖</button>
+        <img id="detail-img" class="w-full h-64 object-cover mb-6 border border-slate-200" />
+        <h3 id="detail-title" class="text-2xl font-headline font-bold text-primary mb-3"></h3>
+        <div id="detail-specs" class="flex flex-wrap gap-2 mb-4"></div>
+        <p id="detail-desc" class="text-on-surface-variant leading-relaxed text-sm"></p>
+    </div>
+</div>
+
+<!-- Article Reader Modal -->
+<div id="article-reader-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
+    <div class="bg-white p-8 rounded-none max-w-3xl w-full relative border-t-4 border-secondary shadow-2xl max-h-[90vh] overflow-y-auto">
+        <button id="close-article-reader" class="absolute top-4 right-4 text-primary hover:text-secondary text-2xl font-bold transition-colors">✖</button>
+        <div class="h-64 sm:h-96 w-full mb-6 overflow-hidden border border-slate-200">
+            <img id="article-reader-img" class="w-full h-full object-cover" />
+        </div>
+        <div class="text-xs text-secondary font-bold uppercase tracking-widest mb-2" id="article-reader-date"></div>
+        <h3 id="article-reader-title" class="text-3xl font-headline font-bold text-primary mb-4 leading-tight"></h3>
+        <div id="article-reader-content" class="text-on-surface-variant leading-relaxed text-sm space-y-4 whitespace-pre-line"></div>
+    </div>
+</div>
+
+<script>
+// Lista de Produtos Padrão
+const defaultProducts = [
+    {
+        id: "prod-1",
+        title: "Compressor de Parafuso Série-X",
+        desc: "Totalmente remanufaturado com sistema de arrefecimento otimizado e rolamentos SKF originais.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDWYOKBQ5mbGWUMzO_GV2sDfRyWogkw4DNoYfmY10ZTvHtIbKxjYgVZ0Epo3hPP1g6X6q8p8nihm78VFns8OMuXvYZRJGIoQKXflA9Zjxovk6xSrKbwXn0T4UjuDHA4huyF7r1HvLzkOGAMpa_mcjVT5HuoAg4IcwTdyokSeJgsBBUMDvLmmYdyYrq-yiyrbWXsq0j_01ehxUCEKgGCVNjzt-lAjLyXVShCQ4xR4XgQt-s0c4IwkJKlsXjwUUX1z8K_VaUIWSsZ_iZ8",
+        featured: true,
+        specs: "250 HP | 12 Bar"
+    },
+    {
+        id: "prod-2",
+        title: "Motor Elétrico Trifásico",
+        desc: "Rebobinamento classe H e balanceamento dinâmico computadorizado.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8epYwKETG2_LJ5h86S0s0qsfa1wMlWz0YGQqmKTBcSJExH2aHaA3QOCyEfECzX0qUlVFubYyAahyqDs3Ah6VvcMlnZioK9eoDi7GCQ53dVGdljlaA3a3vo_9BgOh07fuUs0kT1zlYQqMfuuaBsK069e2RcwEY4ihNlywyaIM69UTo__GfRrH0kKYMbMZS5XwQ3FS5m9tyPocw2jedz5Ry287k3xYHxPGmCR-zzcCa6izW9_Y8hNYXtKqvQ75WmPsoEdcbZtUEGmSl",
+        featured: false,
+        specs: "Classe H | Balanceamento Dinâmico"
+    },
+    {
+        id: "prod-3",
+        title: "Unidade Compressora V2",
+        desc: "Recuperação de colos de rolamento e troca de vedações em viton.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBA_xqOR8qRZU6jQfVvIyKtZUWa4T74kcIGFlu2mSmXvTAceKMfoY6yIYbRpfGkhur2xNdDd-ZG0g-3c7jTyRlrlEHLYF-eJAu0YtyDnLh-PMHYJGe3ggI_AcFnW58-nVHGUByyBqc5g6XdJTrUyaOeuAcyuE7EOqNhkqx56N0WuWfCXd2G4Zt6PbWIRkSeaO3lSU4KR6nqZB8uMoqWHYO4maDpxPBeQ3no5aAvRTr37FeN-nnJqji_P3vWpv_vHTD2sF_G_xXNeXRD",
+        featured: false,
+        specs: "Vedações Viton | Troca de Rolamentos"
+    },
+    {
+        id: "prod-4",
+        title: "Secador de Ar Frigorífico",
+        desc: "Limpeza química interna e carga de gás refrigerante ecológica.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbScv2dbN6zWZsG2oaJCheBQmyky2I1Aa6FyxoTZaDHutVf1ENBkKYs_wau0kF-YGBnXsh4p1r2FUAUfdDUGGmWP9y-OzuysuS6sUepsai5etsi6-fFC2EmUeCm95A7fsu3ruLTixQbNGPY3nqM7fx5sWdsK45m6qirhdDduoZVsD3l_RPyheEwDbDrxirO-Hd-Bp1Le-74jD8wWEdaHugkQSG8asVHfAuqXcW4qohIVKD4JPb1uUIp6XLu35ktUW6j52OfdZo0CKu",
+        featured: false,
+        specs: "Limpeza Química | Gás Ecológico"
+    }
+];
+
+// Lista de Artigos Técnicos Padrão
+const defaultArticles = [
+    {
+        id: "art-1",
+        title: "Como Otimizar a Eficiência Energética de Compressores de Parafuso",
+        summary: "Descubra as principais práticas de engenharia e manutenção para reduzir o consumo elétrico e aumentar a vida útil do seu compressor em até 30%.",
+        content: "Compressores de ar industriais representam frequentemente uma parcela significativa do consumo elétrico de uma planta fabril. Dentre os principais fatores que influenciam a eficiência energética, destacam-se o dimensionamento correto da tubulação, a eliminação sistemática de vazamentos de ar e o controle inteligente da pressão de operação.\n\nA manutenção preventiva é o principal pilar para garantir essa eficiência. Filtros de ar obstruídos exigem maior esforço do motor e aumentam o consumo de energia em até 5%. Além disso, o monitoramento periódico da temperatura de descarga e o uso de óleos lubrificantes de alta performance ajudam a reduzir o atrito interno do elemento compressor.\n\nA substituição de rolamentos desgastados e a revisão completa da unidade compressora evitam folgas mecânicas que causam perdas internas por refluxo. Ao remanufaturar um equipamento sob rigorosos critérios técnicos, é possível devolver a performance original de fábrica com um custo até 60% menor do que a compra de um equipamento novo, além de gerar benefícios imediatos de sustentabilidade.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDWYOKBQ5mbGWUMzO_GV2sDfRyWogkw4DNoYfmY10ZTvHtIbKxjYgVZ0Epo3hPP1g6X6q8p8nihm78VFns8OMuXvYZRJGIoQKXflA9Zjxovk6xSrKbwXn0T4UjuDHA4huyF7r1HvLzkOGAMpa_mcjVT5HuoAg4IcwTdyokSeJgsBBUMDvLmmYdyYrq-yiyrbWXsq0j_01ehxUCEKgGCVNjzt-lAjLyXVShCQ4xR4XgQt-s0c4IwkJKlsXjwUUX1z8K_VaUIWSsZ_iZ8",
+        date: "2026-05-20",
+        visibility: true,
+        publishImmediately: true,
+        publishDate: "",
+        expires: false,
+        expiryDate: ""
+    },
+    {
+        id: "art-2",
+        title: "Remanufatura vs. Manutenção Preventiva Tradicional: Qual Escolher?",
+        summary: "Entenda as diferenças fundamentais entre a simples troca de peças corriqueiras e o rigoroso processo de remanufatura industrial com garantia de fábrica.",
+        content: "A gestão de ativos industriais frequentemente nos coloca diante de dilemas operacionais. Quando um compressor de grande porte apresenta desgaste acentuado, a equipe de manutenção depara-se com duas alternativas principais: efetuar reparos pontuais ou realizar uma remanufatura completa do equipamento.\n\nA manutenção preventiva tradicional foca na substituição periódica de consumíveis, como vedações, mangueiras e filtros. Já a remanufatura é um processo muito mais profundo: o equipamento é completamente desmontado, limpo por métodos químicos especiais, medido milimetricamente com instrumentos de alta precisão e remontado com rolamentos e componentes novos de padrão original.\n\nA remanufatura devolve ao equipamento as características nominais de um compressor novo. Esse processo envolve a recuperação de colos de rolamento e a calibração conforme as normas de fábrica, oferecendo 12 meses de garantia completa. Para operações contínuas que não podem tolerar paradas imprevistas, a remanufatura surge como a opção mais segura e inteligente.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBiWQOQcqg8Ld0EeMb-pE5mnpzy1bdELBQqzLYmqagsJAEANeXLkxZtLs4bWusVdtYi-bAbo_zMVU4nYoG5M_APqPMd_AwMX9teNb0XxrNhrd7wKNY71S3WoOJ7DTMhNI713oLABWjUHbc4JZKR1hhxz5mI_J-iXARraAorqmPOPF9D6m3qRvxXncY8i28Iu5z-32yohMopgDmXnBC0rJOM8MN057gD_bLWHx64OA1956Tqx6_wrq_CWg6LYpY_8SK8TsIIUgpG8pW0",
+        date: "2026-05-15",
+        visibility: true,
+        publishImmediately: true,
+        publishDate: "",
+        expires: false,
+        expiryDate: ""
+    },
+    {
+        id: "art-3",
+        title: "O Papel da Sustentabilidade no Ciclo de Vida dos Equipamentos Industriais",
+        summary: "Como a economia circular aplicada ao maquinário industrial reduz a emissão de carbono e gera economia financeira massiva para as empresas.",
+        content: "A indústria moderna caminha a passos largos em direção a práticas sustentáveis e ecológicas. Nesse contexto, a economia circular ganha destaque absoluto, contrapondo-se ao antigo modelo de descarte linear. Remanufaturar compressores de ar é uma das formas mais eficientes de economia circular mecânica.\n\nEstudos apontam que a remanufatura de um compressor consome até 85% menos energia e cerca de 75% menos matérias-primas ferrosas e não ferrosas em comparação com a fabricação de uma nova máquina. Isso resulta em uma redução drástica na pegada de carbono da planta industrial que opta por essa alternativa.\n\nAlém do impacto ecológico extremamente positivo, as vantagens econômicas são notáveis. Empresas que adotam compressores remanufaturados reduzem seus custos de investimento em bens de capital (CAPEX) mantendo a mesma eficiência, o que viabiliza a alocação de recursos em outros setores produtivos críticos. A Recompara orgulha-se de fazer parte dessa transformação sustentável.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8epYwKETG2_LJ5h86S0s0qsfa1wMlWz0YGQqmKTBcSJExH2aHaA3QOCyEfECzX0qUlVFubYyAahyqDs3Ah6VvcMlnZioK9eoDi7GCQ53dVGdljlaA3a3vo_9BgOh07fuUs0kT1zlYQqMfuuaBsK069e2RcwEY4ihNlywyaIM69UTo__GfRrH0kKYMbMZS5XwQ3FS5m9tyPocw2jedz5Ry287k3xYHxPGmCR-zzcCa6izW9_Y8hNYXtKqvQ75WmPsoEdcbZtUEGmSl",
+        date: "2026-05-10",
+        visibility: true,
+        publishImmediately: true,
+        publishDate: "",
+        expires: false,
+        expiryDate: ""
+    }
+];
+
+// Inicialização dos dados
+function initData() {
+    // Inicializar produtos no localStorage se não existirem
+    if (!localStorage.getItem('recompara_products')) {
+        localStorage.setItem('recompara_products', JSON.stringify(defaultProducts));
+    }
+    
+    // Inicializar artigos no localStorage se não existirem
+    if (!localStorage.getItem('recompara_articles')) {
+        localStorage.setItem('recompara_articles', JSON.stringify(defaultArticles));
+    }
+    
+    // Carregar textos editáveis
+    const storedTitle = localStorage.getItem('recompara_siteTitle');
+    const storedHeroTitle = localStorage.getItem('recompara_heroTitle');
+    const storedHeroSubtitle = localStorage.getItem('recompara_heroSubtitle');
+
+    if (storedTitle) {
+        document.title = storedTitle;
+    }
+    if (storedHeroTitle) {
+        document.getElementById('hero-title').innerHTML = storedHeroTitle;
+    }
+    if (storedHeroSubtitle) {
+        document.getElementById('hero-subtitle').textContent = storedHeroSubtitle;
+    }
+    
+    // Renderizar a vitrine de produtos e artigos
+    renderProductsGrid();
+    renderArticlesGrid();
+}
+
+// Renderização Dinâmica da Vitrine
+function renderProductsGrid() {
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    const products = JSON.parse(localStorage.getItem('recompara_products') || '[]');
+    
+    products.forEach(product => {
+        if (product.featured) {
+            // Renderização do Produto em Destaque (md:col-span-8)
+            const featuredCard = `
+                <div class="md:col-span-8 bg-surface-container-low group overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="p-12 space-y-6 flex-1 flex flex-col justify-center">
+                        <span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase tracking-widest w-fit">Destaque</span>
+                        <h4 class="text-4xl font-headline font-bold text-primary">${product.title}</h4>
+                        <p class="text-on-surface-variant">${product.desc}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${product.specs ? product.specs.split('|').map(s => `<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-high px-3 py-1 text-primary font-medium">${s.trim()}</span>`).join('') : ''}
+                        </div>
+                        <button onclick="openProductModal('${product.id}')" class="mt-4 w-fit py-3 px-6 border border-outline-variant/30 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all text-primary">Detalhes Técnicos</button>
+                    </div>
+                    <div class="flex-1 overflow-hidden relative min-h-[300px]">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${product.img}" alt="${product.title}" />
+                    </div>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', featuredCard);
+        } else {
+            // Renderização dos Produtos Comuns (md:col-span-4)
+            const specsHtml = product.specs ? product.specs.split('|').map(s => `<span class="text-[9px] font-bold uppercase tracking-wider bg-surface-container-high px-2 py-0.5 text-primary font-medium">${s.trim()}</span>`).join('') : '';
+            const standardCard = `
+                <div class="md:col-span-4 bg-surface-container-low p-8 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="h-64 mb-6 overflow-hidden border border-slate-100">
+                        <img class="w-full h-full object-cover hover:scale-110 transition-all duration-500" src="${product.img}" alt="${product.title}" />
+                    </div>
+                    <h4 class="text-xl font-headline font-bold text-primary mb-2">${product.title}</h4>
+                    <p class="text-sm text-on-surface-variant mb-4 line-clamp-3">${product.desc}</p>
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        ${specsHtml}
+                    </div>
+                    <button onclick="openProductModal('${product.id}')" class="mt-auto py-3 border border-outline-variant/30 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all text-primary">Detalhes Técnicos</button>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', standardCard);
+        }
+    });
+    
+    // Adicionar sempre o card de contato estático "Equipamentos Sob Demanda" no final
+    const staticCard = `
+        <div class="md:col-span-4 bg-primary p-12 flex flex-col justify-center text-white shadow-sm">
+            <h4 class="text-3xl font-headline font-bold mb-6">Equipamentos Sob Demanda</h4>
+            <p class="text-primary-fixed-dim mb-8">Não encontrou o que precisava? Nossa equipe busca e remanufatura sob especificação.</p>
+            <button onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})" class="bg-secondary text-on-secondary py-4 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all">Consultar Engenharia</button>
+        </div>
+    `;
+    grid.insertAdjacentHTML('beforeend', staticCard);
+}
+
+// Renderização Dinâmica dos Artigos Técnicos
+function renderArticlesGrid() {
+    const grid = document.getElementById('articles-grid');
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    const articles = JSON.parse(localStorage.getItem('recompara_articles') || '[]');
+    const now = new Date();
+    
+    const visibleArticles = articles.filter(art => {
+        // Regra 1: Visibilidade geral
+        if (art.visibility === false) return false;
+        
+        // Regra 2: Agendamento / Data de Publicação
+        if (!art.publishImmediately && art.publishDate) {
+            const pubTime = new Date(art.publishDate);
+            if (now < pubTime) return false;
+        }
+        
+        // Regra 3: Expiração / Data de Retirada do ar
+        if (art.expires && art.expiryDate) {
+            const expTime = new Date(art.expiryDate);
+            if (now > expTime) return false;
+        }
+        
+        return true;
+    });
+
+    if (visibleArticles.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-3 text-center py-12 bg-surface-container-low border border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary text-5xl mb-4" data-icon="menu_book">menu_book</span>
+                <h4 class="text-xl font-headline font-bold text-primary">Novos Artigos Em Breve</h4>
+                <p class="text-sm text-on-surface-variant mt-2">Nossa equipe de engenharia está preparando novos conteúdos técnicos.</p>
+            </div>
+        `;
+        return;
+    }
+
+    visibleArticles.forEach(art => {
+        // Formatar data de exibição
+        const formattedDate = art.date ? new Date(art.date + 'T00:00:00').toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+        }) : '';
+        
+        const card = `
+            <div class="bg-surface-container-low border border-slate-100 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div class="h-56 overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${art.img}" alt="${art.title}" />
+                </div>
+                <div class="p-8 flex flex-col flex-1">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-3">${formattedDate}</span>
+                    <h4 class="text-xl font-headline font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors line-clamp-2">${art.title}</h4>
+                    <p class="text-sm text-on-surface-variant mb-6 line-clamp-3 leading-relaxed">${art.summary}</p>
+                    <button onclick="openArticleModal('${art.id}')" class="mt-auto w-fit text-primary hover:text-secondary text-xs font-bold uppercase tracking-widest flex items-center gap-1.5 transition-colors">
+                        Ler Artigo Completo
+                        <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', card);
+    });
+}
+
+// Modal de Detalhes do Produto
+function openProductModal(id) {
+    const products = JSON.parse(localStorage.getItem('recompara_products') || '[]');
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    document.getElementById('detail-img').src = product.img;
+    document.getElementById('detail-title').textContent = product.title;
+    document.getElementById('detail-desc').textContent = product.desc;
+
+    const specsContainer = document.getElementById('detail-specs');
+    specsContainer.innerHTML = '';
+    if (product.specs) {
+        product.specs.split('|').forEach(s => {
+            if (s.trim()) {
+                const badge = document.createElement('span');
+                badge.className = "text-[10px] font-bold uppercase tracking-widest bg-surface-container-high px-3 py-1 text-primary font-medium";
+                badge.textContent = s.trim();
+                specsContainer.appendChild(badge);
+            }
+        });
+    }
+
+    document.getElementById('product-detail-modal').classList.remove('hidden');
+}
+
+// Modal de Leitura de Artigo
+function openArticleModal(id) {
+    const articles = JSON.parse(localStorage.getItem('recompara_articles') || '[]');
+    const art = articles.find(a => a.id === id);
+    if (!art) return;
+
+    document.getElementById('article-reader-img').src = art.img;
+    document.getElementById('article-reader-title').textContent = art.title;
+    
+    // Formatar data
+    const formattedDate = art.date ? new Date(art.date + 'T00:00:00').toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+    }) : '';
+    
+    document.getElementById('article-reader-date').textContent = formattedDate;
+    document.getElementById('article-reader-content').innerHTML = art.content.split('\n\n').map(p => `<p class="mb-4">${p}</p>`).join('');
+
+    document.getElementById('article-reader-modal').classList.remove('hidden');
+}
+
+// Fechar Modal de Produto
+document.getElementById('close-product-detail').addEventListener('click', () => {
+    document.getElementById('product-detail-modal').classList.add('hidden');
+});
+
+// Fechar Modal de Artigo
+document.getElementById('close-article-reader').addEventListener('click', () => {
+    document.getElementById('article-reader-modal').classList.add('hidden');
+});
+
+// Fechar modais ao clicar fora (no background)
+window.addEventListener('click', (e) => {
+    const prodModal = document.getElementById('product-detail-modal');
+    const artModal = document.getElementById('article-reader-modal');
+    if (e.target === prodModal) prodModal.classList.add('hidden');
+    if (e.target === artModal) artModal.classList.add('hidden');
+});
+
+// Inicializar na carga da página
+window.addEventListener('DOMContentLoaded', initData);
+</script>
+</body>
+
+</html>
