@@ -192,6 +192,14 @@
                                 placeholder="Recompara Compressores | Excelência em Remanufatura" />
                             <p class="text-[10px] text-slate-400">Texto que aparece na aba superior do navegador.</p>
                         </div>
+                        
+                        <div class="space-y-2">
+                            <label for="input-site-logo" class="text-xs font-bold uppercase tracking-widest text-primary">Logo do Site (URL da Imagem)</label>
+                            <input id="input-site-logo" type="text" 
+                                class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-3 px-4 outline-none text-sm transition-all"
+                                placeholder="Imagens/Logo Recompara.jpeg" />
+                            <p class="text-[10px] text-slate-400">URL da imagem que será exibida como logo no cabeçalho do site.</p>
+                        </div>
 
                         <div class="space-y-2">
                             <label for="input-hero-title" class="text-xs font-bold uppercase tracking-widest text-primary flex justify-between">
@@ -713,6 +721,7 @@
         const inputSiteTitle = document.getElementById('input-site-title');
         const inputHeroTitle = document.getElementById('input-hero-title');
         const inputHeroSubtitle = document.getElementById('input-hero-subtitle');
+        const inputSiteLogo = document.getElementById('input-site-logo');
 
         // ELEMENTOS DE PRODUTO
         const adminProductList = document.getElementById('admin-product-list');
@@ -966,10 +975,14 @@
             if (!localStorage.getItem('recompara_testimonials')) {
                 localStorage.setItem('recompara_testimonials', JSON.stringify([])); // Empty array, will be populated by default data in testimonials.js
             }
+            if (!localStorage.getItem('recompara_siteLogo')) {
+                localStorage.setItem('recompara_siteLogo', 'Imagens/Logo Recompara.jpeg');
+            }
 
             inputSiteTitle.value = localStorage.getItem('recompara_siteTitle') || "Recompara Compressores | Excelência em Remanufatura";
             inputHeroTitle.value = localStorage.getItem('recompara_heroTitle') || `Qualidade Sempre em <span class="text-secondary">Primeiro Lugar!</span>`;
             inputHeroSubtitle.value = localStorage.getItem('recompara_heroSubtitle') || "Remanufaturar é Transformar. Unimos engenharia avançada e sustentabilidade para dar nova vida ao seu maquinário industrial.";
+            inputSiteLogo.value = localStorage.getItem('recompara_siteLogo') || 'Imagens/Logo Recompara.jpeg';
             
             renderAdminProducts();
             renderAdminArticles();
@@ -982,6 +995,7 @@
             localStorage.setItem('recompara_siteTitle', inputSiteTitle.value.trim());
             localStorage.setItem('recompara_heroTitle', inputHeroTitle.value.trim());
             localStorage.setItem('recompara_heroSubtitle', inputHeroSubtitle.value.trim());
+            localStorage.setItem('recompara_siteLogo', inputSiteLogo.value.trim());
             showToast("Textos do site salvos com sucesso!");
         });
 

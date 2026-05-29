@@ -108,10 +108,11 @@
 <body class="bg-surface font-body text-on-surface">
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 industrial-glass shadow-sm">
-        <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
-            <div class="text-2xl font-black tracking-tighter text-primary uppercase font-headline">
-                Recompara Compressores
-            </div>
+            <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+                <div class="flex items-center space-x-3">
+                    <img id="site-logo" src="Imagens/Logo Recompara.jpeg" alt="Recompara Compressores Logo" class="h-8 w-auto">
+                    <div class="text-2xl font-black tracking-tighter text-primary uppercase font-headline hidden" id="site-logo-text">Recompara Compressores</div>
+                </div>
             <div class="hidden md:flex items-center space-x-8">
                 <a class="text-secondary border-b-2 border-secondary pb-1 text-sm font-semibold uppercase tracking-wider transition-colors duration-300"
                     href="#">Home</a>
@@ -626,6 +627,7 @@ function initData() {
     const storedTitle = localStorage.getItem('recompara_siteTitle');
     const storedHeroTitle = localStorage.getItem('recompara_heroTitle');
     const storedHeroSubtitle = localStorage.getItem('recompara_heroSubtitle');
+    const storedSiteLogo = localStorage.getItem('recompara_siteLogo');
 
     if (storedTitle) {
         document.title = storedTitle;
@@ -635,6 +637,16 @@ function initData() {
     }
     if (storedHeroSubtitle) {
         document.getElementById('hero-subtitle').textContent = storedHeroSubtitle;
+    }
+    // Carregar logo do site
+    if (storedSiteLogo) {
+        document.getElementById('site-logo').src = storedSiteLogo;
+        document.getElementById('site-logo').classList.remove('hidden');
+        document.getElementById('site-logo-text').classList.add('hidden');
+    } else {
+        // Fallback para texto se não houver logo configurado
+        document.getElementById('site-logo').classList.add('hidden');
+        document.getElementById('site-logo-text').classList.remove('hidden');
     }
     
     // Renderizar a vitrine de produtos e artigos
