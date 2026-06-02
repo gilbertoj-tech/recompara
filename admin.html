@@ -219,6 +219,25 @@
                                 placeholder="Remanufaturar é Transformar. Unimos engenharia avançada e sustentabilidade..."></textarea>
                             <p class="text-[10px] text-slate-400">Parágrafo que descreve a proposta de valor principal da empresa abaixo do título.</p>
                         </div>
+                        
+                        <!-- Nossa História Section -->
+                        <div class="space-y-2">
+                            <label for="input-history-image" class="text-xs font-bold uppercase tracking-widest text-primary">Imagem da Nossa História</label>
+                            <input id="input-history-image" type="text" 
+                                class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-3 px-4 outline-none text-sm transition-all"
+                                placeholder="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWQOQcqg8Ld0EeMb-pE5mnpzy1bdELBQqzLYmqagsJAEANeXLkxZtLs4bWusVdtYi-bAbo_zMVU4nYoG5M_APqPMd_AwMX9teNb0XxrNhrd7wKNY71S3WoOJ7DTMhNI713oLABWjUHbc4JZKR1hhxz5mI_J-iXARraAorqmPOPF9D6m3qRvxXncY8i28Iu5z-32yohMopgDmXnBC0rJOM8MN057gD_bLWHx64OA1956Tqx6_wrq_CWg6LYpY_8SK8TsIIUgpG8pW0" />
+                            <p class="text-[10px] text-slate-400">URL da imagem exibida na seção Nossa História.</p>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label for="input-history-text" class="text-xs font-bold uppercase tracking-widest text-primary">Texto da Nossa História</label>
+                            <textarea id="input-history-text" rows="6" 
+                                class="w-full border border-slate-200 focus:border-secondary focus:ring-0 py-3 px-4 outline-none text-sm transition-all resize-none"
+                                placeholder="Desde nossa fundação em 2018, a Recompara Compressores nasceu com o propósito de redefinir o ciclo de vida dos equipamentos industriais. Localizados em Araraquara-SP, transformamos tecnologia em soluções sustentáveis.
+
+Nossa abordagem combina o rigor da engenharia mecânica tradicional com as mais novas técnicas de recuperação de superfícies e rebobinamento, garantindo que cada compressor retorne à linha de produção com performance de fábrica."></textarea>
+                            <p class="text-[10px] text-slate-400">Texto completo exibido na seção Nossa História (suporta quebras de linha).</p>
+                        </div>
 
                         <div class="pt-4">
                             <button type="submit" 
@@ -722,6 +741,8 @@
         const inputHeroTitle = document.getElementById('input-hero-title');
         const inputHeroSubtitle = document.getElementById('input-hero-subtitle');
         const inputSiteLogo = document.getElementById('input-site-logo');
+        const inputHistoryImage = document.getElementById('input-history-image');
+        const inputHistoryText = document.getElementById('input-history-text');
 
         // ELEMENTOS DE PRODUTO
         const adminProductList = document.getElementById('admin-product-list');
@@ -978,11 +999,19 @@
             if (!localStorage.getItem('recompara_siteLogo')) {
                 localStorage.setItem('recompara_siteLogo', 'Imagens/Logo Recompara.jpeg');
             }
+            if (!localStorage.getItem('recompara_historyImage')) {
+                localStorage.setItem('recompara_historyImage', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiWQOQcqg8Ld0EeMb-pE5mnpzy1bdELBQqzLYmqagsJAEANeXLkxZtLs4bWusVdtYi-bAbo_zMVU4nYoG5M_APqPMd_AwMX9teNb0XxrNhrd7wKNY71S3WoOJ7DTMhNI713oLABWjUHbc4JZKR1hhxz5mI_J-iXARraAorqmPOPF9D6m3qRvxXncY8i28Iu5z-32yohMopgDmXnBC0rJOM8MN057gD_bLWHx64OA1956Tqx6_wrq_CWg6LYpY_8SK8TsIIUgpG8pW0');
+            }
+            if (!localStorage.getItem('recompara_historyText')) {
+                localStorage.setItem('recompara_historyText', 'Desde nossa fundação em 2018, a Recompara Compressores nasceu com o propósito de redefinir o ciclo de vida dos equipamentos industriais. Localizados em Araraquara-SP, transformamos tecnologia em soluções sustentáveis.\n\nNossa abordagem combina o rigor da engenharia mecânica tradicional com as mais novas técnicas de recuperação de superfícies e rebobinamento, garantindo que cada compressor retorne à linha de produção com performance de fábrica.');
+            }
 
             inputSiteTitle.value = localStorage.getItem('recompara_siteTitle') || "Recompara Compressores | Excelência em Remanufatura";
             inputHeroTitle.value = localStorage.getItem('recompara_heroTitle') || `Qualidade Sempre em <span class="text-secondary">Primeiro Lugar!</span>`;
             inputHeroSubtitle.value = localStorage.getItem('recompara_heroSubtitle') || "Remanufaturar é Transformar. Unimos engenharia avançada e sustentabilidade para dar nova vida ao seu maquinário industrial.";
             inputSiteLogo.value = localStorage.getItem('recompara_siteLogo') || 'Imagens/Logo Recompara.jpeg';
+            inputHistoryImage.value = localStorage.getItem('recompara_historyImage') || 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiWQOQcqg8Ld0EeMb-pE5mnpzy1bdELBQqzLYmqagsJAEANeXLkxZtLs4bWusVdtYi-bAbo_zMVU4nYoG5M_APqPMd_AwMX9teNb0XxrNhrd7wKNY71S3WoOJ7DTMhNI713oLABWjUHbc4JZKR1hhxz5mI_J-iXARraAorqmPOPF9D6m3qRvxXncY8i28Iu5z-32yohMopgDmXnBC0rJOM8MN057gD_bLWHx64OA1956Tqx6_wrq_CWg6LYpY_8SK8TsIIUgpG8pW0';
+            inputHistoryText.value = localStorage.getItem('recompara_historyText') || 'Desde nossa fundação em 2018, a Recompara Compressores nasceu com o propósito de redefinir o ciclo de vida dos equipamentos industriais. Localizados em Araraquara-SP, transformamos tecnologia em soluções sustentáveis.\n\nNossa abordagem combina o rigor da engenharia mecânica tradicional com as mais novas técnicas de recuperação de superfícies e rebobinamento, garantindo que cada compressor retorne à linha de produção com performance de fábrica.';
             
             renderAdminProducts();
             renderAdminArticles();
@@ -996,6 +1025,8 @@
             localStorage.setItem('recompara_heroTitle', inputHeroTitle.value.trim());
             localStorage.setItem('recompara_heroSubtitle', inputHeroSubtitle.value.trim());
             localStorage.setItem('recompara_siteLogo', inputSiteLogo.value.trim());
+            localStorage.setItem('recompara_historyImage', inputHistoryImage.value.trim());
+            localStorage.setItem('recompara_historyText', inputHistoryText.value.trim());
             showToast("Textos do site salvos com sucesso!");
         });
 

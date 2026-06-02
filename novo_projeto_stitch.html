@@ -628,6 +628,8 @@ function initData() {
     const storedHeroTitle = localStorage.getItem('recompara_heroTitle');
     const storedHeroSubtitle = localStorage.getItem('recompara_heroSubtitle');
     const storedSiteLogo = localStorage.getItem('recompara_siteLogo');
+    const storedHistoryImage = localStorage.getItem('recompara_historyImage');
+    const storedHistoryText = localStorage.getItem('recompara_historyText');
 
     if (storedTitle) {
         document.title = storedTitle;
@@ -647,6 +649,37 @@ function initData() {
         // Fallback para texto se não houver logo configurado
         document.getElementById('site-logo').classList.add('hidden');
         document.getElementById('site-logo-text').classList.remove('hidden');
+    }
+    // Carregar imagem e texto da Nossa História
+    if (storedHistoryImage) {
+        const historyImg = document.querySelector('#sobre img');
+        if (historyImg) {
+            historyImg.src = storedHistoryImage;
+        }
+    }
+    if (storedHistoryText) {
+        const historyTextElement = document.querySelector('#sobre p.text-lg');
+        if (historyTextElement) {
+            // Split the text by newlines and create paragraph elements
+            const paragraphs = storedHistoryText.split('\n\n');
+            const historyContentDiv = document.createElement('div');
+            historyContentDiv.className = 'space-y-6';
+            
+            paragraphs.forEach((paragraph, index) => {
+                const p = document.createElement('p');
+                p.className = 'text-lg text-on-surface-variant leading-relaxed';
+                p.textContent = paragraph.trim();
+                historyContentDiv.appendChild(p);
+            });
+            
+            // Replace the existing text content
+            const historySection = document.querySelector('#sobre .space-y-8');
+            if (historySection) {
+                // Clear existing content and add new content
+                historySection.innerHTML = '';
+                historySection.appendChild(historyContentDiv);
+            }
+        }
     }
     
     // Renderizar a vitrine de produtos e artigos
